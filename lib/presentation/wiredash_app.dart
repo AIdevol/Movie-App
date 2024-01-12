@@ -62,9 +62,17 @@ class WiredashApp extends StatelessWidget {
     required this.languageCode,
   });
 
+  // @override
   @override
   Widget build(BuildContext context) {
     final bool isDarkTheme = context.read<ThemeCubit>().state == Themes.dark;
+
+    Color primaryColor = isDarkTheme ? AppColor.royalBlue : Colors.blue;
+    Color accentColor = AppColor.violet;
+    Color backgroundColor = isDarkTheme ? AppColor.vulcan : Colors.white;
+    Color cardColor = isDarkTheme ? AppColor.vulcan : Colors.white;
+    Color errorColor = Colors.red;
+
     return Wiredash(
       projectId: 'movie-app-tutorial-k1xtma1',
       secret: 'wsmigg476q5l4k9mz2njmob4puuuwt58',
@@ -77,14 +85,11 @@ class WiredashApp extends StatelessWidget {
       ),
       theme: WiredashThemeData(
         brightness: isDarkTheme ? Brightness.dark : Brightness.light,
-        ColorScheme: ColorScheme.fromSwatch(
-          primarySwatch: AppColor.royalBlue,
-          accentColor: AppColor.violet,
-          backgroundColor: isDarkTheme ? AppColor.vulcan : Colors.white,
-          cardColor: isDarkTheme ? AppColor.vulcan : Colors.white,
-          errorColor: Colors.red,
-          brightness: isDarkTheme ? Brightness.dark : Brightness.light,
-        ),
+        primaryColor: primaryColor,
+        secondPenColor: accentColor,
+        appBackgroundColor: backgroundColor,
+        errorColor: cardColor,
+        thirdPenColor: errorColor,
       ),
     );
   }
