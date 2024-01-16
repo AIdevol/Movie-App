@@ -11,12 +11,12 @@ class AppDialog extends StatelessWidget {
   final Widget? image;
 
   const AppDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.buttonText,
     this.image,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,14 +48,14 @@ class AppDialog extends StatelessWidget {
           children: [
             Text(
               title.t(context),
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: Sizes.dimen_6.h),
               child: Text(
                 description.t(context),
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
             if (image != null) image!,

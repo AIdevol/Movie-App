@@ -13,6 +13,8 @@ import 'movie_tabbed_constants.dart';
 import 'tab_title_widget.dart';
 
 class MovieTabbedWidget extends StatefulWidget {
+  const MovieTabbedWidget({super.key});
+
   @override
   _MovieTabbedWidgetState createState() => _MovieTabbedWidgetState();
 }
@@ -30,10 +32,6 @@ class _MovieTabbedWidgetState extends State<MovieTabbedWidget>
     movieTabbedCubit.movieTabChanged(currentTabIndex: currentTabIndex);
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +63,7 @@ class _MovieTabbedWidgetState extends State<MovieTabbedWidget>
                           child: Text(
                             TranslationConstants.noMovies.t(context),
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.subtitle1,
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),
                       )

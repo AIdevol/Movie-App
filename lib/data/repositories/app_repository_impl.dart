@@ -25,7 +25,7 @@ class AppRepositoryImpl extends AppRepository {
       final response = await languageLocalDataSource.updateLanguage(language);
       return Right(response);
     } on Exception {
-      return Left(AppError(AppErrorType.database));
+      return const Left(AppError(AppErrorType.database));
     }
   }
 
@@ -35,7 +35,7 @@ class AppRepositoryImpl extends AppRepository {
       final response = await languageLocalDataSource.getPreferredTheme();
       return Right(response);
     } on Exception {
-      return Left(AppError(AppErrorType.database));
+      return const Left(AppError(AppErrorType.database));
     }
   }
 
@@ -45,7 +45,7 @@ class AppRepositoryImpl extends AppRepository {
       final response = await languageLocalDataSource.updateTheme(themeName);
       return Right(response);
     } on Exception {
-      return Left(AppError(AppErrorType.database));
+      return const Left(AppError(AppErrorType.database));
     }
   }
 }

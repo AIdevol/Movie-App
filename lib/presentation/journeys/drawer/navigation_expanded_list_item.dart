@@ -8,11 +8,11 @@ class NavigationExpandedListItem extends StatelessWidget {
   final List<String> children;
 
   const NavigationExpandedListItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.onPressed,
     required this.children,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class NavigationExpandedListItem extends StatelessWidget {
       child: ExpansionTile(
         title: Text(
           title,
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         children: [
           for (int i = 0; i < children.length; i++)

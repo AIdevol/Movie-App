@@ -85,7 +85,7 @@ class NavigationDrawerz extends StatelessWidget {
                 },
               ),
             ),
-            Spacer(),
+            const Spacer(),
             BlocBuilder<ThemeCubit, Themes>(builder: (context, theme) {
               return Align(
                 alignment: Alignment.center,

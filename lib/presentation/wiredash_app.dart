@@ -77,7 +77,6 @@ class WiredashApp extends StatelessWidget {
       projectId: 'movie-app-tutorial-k1xtma1',
       secret: 'wsmigg476q5l4k9mz2njmob4puuuwt58',
       navigatorKey: navigatorKey,
-      child: child,
       options: WiredashOptionsData(
         locale: Locale.fromSubtags(
           languageCode: languageCode,
@@ -91,6 +90,7 @@ class WiredashApp extends StatelessWidget {
         errorColor: cardColor,
         thirdPenColor: errorColor,
       ),
+      child: child,
     );
   }
 }

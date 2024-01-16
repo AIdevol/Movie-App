@@ -1,23 +1,30 @@
 import '../../domain/entities/movie_entity.dart';
 
 class MovieModel extends MovieEntity {
+  @override
   final int id;
   final bool? video;
   final int? voteCount;
+  @override
   final double? voteAverage;
+  @override
   final String title;
+  @override
   final String? releaseDate;
   final String? originalLanguage;
   final String? originalTitle;
   final List<int>? genreIds;
+  @override
   final String backdropPath;
   final bool? adult;
+  @override
   final String? overview;
+  @override
   final String posterPath;
   final double? popularity;
   final String? mediaType;
 
-  MovieModel({
+  const MovieModel({
     required this.id,
     this.video,
     this.voteCount,
@@ -64,22 +71,22 @@ class MovieModel extends MovieEntity {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['video'] = this.video;
-    data['vote_count'] = this.voteCount;
-    data['vote_average'] = this.voteAverage;
-    data['title'] = this.title;
-    data['release_date'] = this.releaseDate;
-    data['original_language'] = this.originalLanguage;
-    data['original_title'] = this.originalTitle;
-    data['genre_ids'] = this.genreIds;
-    data['backdrop_path'] = this.backdropPath;
-    data['adult'] = this.adult;
-    data['overview'] = this.overview;
-    data['poster_path'] = this.posterPath;
-    data['popularity'] = this.popularity;
-    data['media_type'] = this.mediaType;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['video'] = video;
+    data['vote_count'] = voteCount;
+    data['vote_average'] = voteAverage;
+    data['title'] = title;
+    data['release_date'] = releaseDate;
+    data['original_language'] = originalLanguage;
+    data['original_title'] = originalTitle;
+    data['genre_ids'] = genreIds;
+    data['backdrop_path'] = backdropPath;
+    data['adult'] = adult;
+    data['overview'] = overview;
+    data['poster_path'] = posterPath;
+    data['popularity'] = popularity;
+    data['media_type'] = mediaType;
     return data;
   }
 }

@@ -14,9 +14,9 @@ class BigPoster extends StatelessWidget {
   final MovieDetailEntity movie;
 
   const BigPoster({
-    Key? key,
+    super.key,
     required this.movie,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class BigPoster extends StatelessWidget {
           child: ListTile(
             title: Text(
               movie.title,
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             subtitle: Text(
               movie.releaseDate ?? '',

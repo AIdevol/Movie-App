@@ -19,6 +19,8 @@ import 'themes/theme_text.dart';
 import 'wiredash_app.dart';
 
 class MovieApp extends StatefulWidget {
+  const MovieApp({super.key});
+
   @override
   _MovieAppState createState() => _MovieAppState();
 }
@@ -98,14 +100,14 @@ class _MovieAppState extends State<MovieApp> {
                               : AppColor.vulcan,
                         ),
                       ),
-                      enabledBorder: UnderlineInputBorder(
+                      enabledBorder: const UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey)),
                     ),
                   ),
                   supportedLocales:
                       Languages.languages.map((e) => Locale(e.code)).toList(),
                   locale: locale,
-                  localizationsDelegates: [
+                  localizationsDelegates: const [
                     AppLocalizations.delegate,
                     GlobalMaterialLocalizations.delegate,
                     GlobalWidgetsLocalizations.delegate,

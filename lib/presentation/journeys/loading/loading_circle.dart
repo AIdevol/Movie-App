@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 class LoadingCircle extends StatelessWidget {
   final double size;
 
-  const LoadingCircle({Key? key, required this.size}) : super(key: key);
+  const LoadingCircle({super.key, required this.size});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: size,
       height: size,
-      child: FlareActor(
+      child: const FlareActor(
         'assets/animations/loading_circle.flr',
         animation: 'load',
         snapToEnd: true,

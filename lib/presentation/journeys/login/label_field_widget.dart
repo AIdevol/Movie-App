@@ -11,13 +11,13 @@ class LabelFieldWidget extends StatelessWidget {
   final TextEditingController controller;
 
   const LabelFieldWidget({
-    Key? key,
+    super.key,
     required this.label,
     required this.hintText,
     required this.controller,
     this.isPasswordField = false,
     this.textFieldKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class LabelFieldWidget extends StatelessWidget {
         children: [
           Text(
             label.toUpperCase(),
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
             textAlign: TextAlign.start,
           ),
           TextField(
@@ -36,7 +36,7 @@ class LabelFieldWidget extends StatelessWidget {
             obscureText: isPasswordField,
             obscuringCharacter: '*',
             controller: controller,
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
             decoration: InputDecoration(hintText: hintText),
           ),
         ],

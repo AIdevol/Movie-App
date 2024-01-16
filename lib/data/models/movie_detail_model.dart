@@ -2,32 +2,39 @@ import '../../domain/entities/movie_detail_entity.dart';
 
 class MovieDetailModel extends MovieDetailEntity {
   final bool? adult;
+  @override
   final String? backdropPath;
   final BelongsToCollection? belongsToCollection;
   final int? budget;
   final List<Genres?>? genres;
   final String? homepage;
+  @override
   final int id;
   final String? imdbId;
   final String? originalLanguage;
   final String? originalTitle;
+  @override
   final String? overview;
   final double? popularity;
+  @override
   final String posterPath;
   final List<ProductionCompanies?>? productionCompanies;
   final List<ProductionCountries?>? productionCountries;
+  @override
   final String? releaseDate;
   final int? revenue;
   final int? runtime;
   final List<SpokenLanguages?>? spokenLanguages;
   final String? status;
   final String? tagline;
+  @override
   final String title;
   final bool? video;
+  @override
   final num? voteAverage;
   final int? voteCount;
 
-  MovieDetailModel(
+  const MovieDetailModel(
       {this.adult,
       this.backdropPath,
       this.belongsToCollection,
@@ -68,7 +75,7 @@ class MovieDetailModel extends MovieDetailEntity {
       adult: json['adult'],
       backdropPath: json['backdrop_path'],
       belongsToCollection: json['belongs_to_collection'] != null
-          ? new BelongsToCollection.fromJson(json['belongs_to_collection'])
+          ? BelongsToCollection.fromJson(json['belongs_to_collection'])
           : null,
       budget: json['budget'],
       genres: _genres(json),
@@ -93,45 +100,45 @@ class MovieDetailModel extends MovieDetailEntity {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['adult'] = this.adult;
-    data['backdrop_path'] = this.backdropPath;
-    if (this.belongsToCollection != null) {
-      data['belongs_to_collection'] = this.belongsToCollection?.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['adult'] = adult;
+    data['backdrop_path'] = backdropPath;
+    if (belongsToCollection != null) {
+      data['belongs_to_collection'] = belongsToCollection?.toJson();
     }
-    data['budget'] = this.budget;
-    if (this.genres != null) {
-      data['genres'] = this.genres?.map((v) => v?.toJson()).toList();
+    data['budget'] = budget;
+    if (genres != null) {
+      data['genres'] = genres?.map((v) => v?.toJson()).toList();
     }
-    data['homepage'] = this.homepage;
-    data['id'] = this.id;
-    data['imdb_id'] = this.imdbId;
-    data['original_language'] = this.originalLanguage;
-    data['original_title'] = this.originalTitle;
-    data['overview'] = this.overview;
-    data['popularity'] = this.popularity;
-    data['poster_path'] = this.posterPath;
-    if (this.productionCompanies != null) {
+    data['homepage'] = homepage;
+    data['id'] = id;
+    data['imdb_id'] = imdbId;
+    data['original_language'] = originalLanguage;
+    data['original_title'] = originalTitle;
+    data['overview'] = overview;
+    data['popularity'] = popularity;
+    data['poster_path'] = posterPath;
+    if (productionCompanies != null) {
       data['production_companies'] =
-          this.productionCompanies?.map((v) => v?.toJson()).toList();
+          productionCompanies?.map((v) => v?.toJson()).toList();
     }
-    if (this.productionCountries != null) {
+    if (productionCountries != null) {
       data['production_countries'] =
-          this.productionCountries?.map((v) => v?.toJson()).toList();
+          productionCountries?.map((v) => v?.toJson()).toList();
     }
-    data['release_date'] = this.releaseDate;
-    data['revenue'] = this.revenue;
-    data['runtime'] = this.runtime;
-    if (this.spokenLanguages != null) {
+    data['release_date'] = releaseDate;
+    data['revenue'] = revenue;
+    data['runtime'] = runtime;
+    if (spokenLanguages != null) {
       data['spoken_languages'] =
-          this.spokenLanguages?.map((v) => v?.toJson()).toList();
+          spokenLanguages?.map((v) => v?.toJson()).toList();
     }
-    data['status'] = this.status;
-    data['tagline'] = this.tagline;
-    data['title'] = this.title;
-    data['video'] = this.video;
-    data['vote_average'] = this.voteAverage;
-    data['vote_count'] = this.voteCount;
+    data['status'] = status;
+    data['tagline'] = tagline;
+    data['title'] = title;
+    data['video'] = video;
+    data['vote_average'] = voteAverage;
+    data['vote_count'] = voteCount;
     return data;
   }
 }
@@ -140,7 +147,7 @@ _genres(Map<String, dynamic> json) {
   if (json['genres'] != null) {
     final genres = List<Genres>.empty(growable: true);
     json['genres'].forEach((v) {
-      genres.add(new Genres.fromJson(v));
+      genres.add(Genres.fromJson(v));
     });
   }
 }
@@ -161,11 +168,11 @@ class BelongsToCollection {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['poster_path'] = this.posterPath;
-    data['backdrop_path'] = this.backdropPath;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['poster_path'] = posterPath;
+    data['backdrop_path'] = backdropPath;
     return data;
   }
 }
@@ -182,9 +189,9 @@ class Genres {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
     return data;
   }
 }
@@ -205,11 +212,11 @@ class ProductionCompanies {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['logo_path'] = this.logoPath;
-    data['name'] = this.name;
-    data['origin_country'] = this.originCountry;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['logo_path'] = logoPath;
+    data['name'] = name;
+    data['origin_country'] = originCountry;
     return data;
   }
 }
@@ -226,9 +233,9 @@ class ProductionCountries {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['iso_3166_1'] = this.iso31661;
-    data['name'] = this.name;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['iso_3166_1'] = iso31661;
+    data['name'] = name;
     return data;
   }
 }
@@ -245,9 +252,9 @@ class SpokenLanguages {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['iso_639_1'] = this.iso6391;
-    data['name'] = this.name;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['iso_639_1'] = iso6391;
+    data['name'] = name;
     return data;
   }
 }

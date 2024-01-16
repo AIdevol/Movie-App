@@ -13,11 +13,11 @@ class MovieTabCardWidget extends StatelessWidget {
   final String title, posterPath;
 
   const MovieTabCardWidget({
-    Key? key,
+    super.key,
     required this.movieId,
     required this.title,
     required this.posterPath,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class MovieTabCardWidget extends StatelessWidget {
               title.intelliTrim(),
               maxLines: 1,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyText2,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
         ],

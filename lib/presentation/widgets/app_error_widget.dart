@@ -13,10 +13,10 @@ class AppErrorWidget extends StatelessWidget {
   final Function() onPressed;
 
   const AppErrorWidget({
-    Key? key,
+    super.key,
     required this.errorType,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class AppErrorWidget extends StatelessWidget {
                 ? TranslationConstants.somethingWentWrong.t(context)
                 : TranslationConstants.checkNetwork.t(context),
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           ButtonBar(
             children: [

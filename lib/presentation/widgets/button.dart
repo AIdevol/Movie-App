@@ -11,11 +11,11 @@ class Button extends StatelessWidget {
   final bool isEnabled;
 
   const Button({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.isEnabled = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class Button extends StatelessWidget {
         onPressed: isEnabled ? onPressed : null,
         child: Text(
           text.t(context),
-          style: Theme.of(context).textTheme.button,
+          style: Theme.of(context).textTheme.labelLarge,
         ),
       ),
     );

@@ -16,5 +16,5 @@ void main() async {
   Hive.init(appDocumentDir.path);
   Hive.registerAdapter(MovieTableAdapter());
   unawaited(getIt.init());
-  runApp(MovieApp());
+  runApp(const MovieApp());
 }

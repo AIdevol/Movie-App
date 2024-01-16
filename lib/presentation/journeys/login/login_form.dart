@@ -12,7 +12,7 @@ import '../../widgets/button.dart';
 import 'label_field_widget.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({Key? key}) : super(key: key);
+  const LoginForm({super.key});
 
   @override
   _LoginFormState createState() => _LoginFormState();
@@ -65,7 +65,7 @@ class _LoginFormState extends State<LoginForm> {
               child: Text(
                 TranslationConstants.loginToMovieApp.t(context),
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
             LabelFieldWidget(
@@ -84,11 +84,12 @@ class _LoginFormState extends State<LoginForm> {
             BlocConsumer<LoginCubit, LoginState>(
               buildWhen: (previous, current) => current is LoginError,
               builder: (context, state) {
-                if (state is LoginError)
+                if (state is LoginError) {
                   return Text(
                     state.message.t(context),
                     style: Theme.of(context).textTheme.orangeSubtitle1,
                   );
+                }
                 return const SizedBox.shrink();
               },
               listenWhen: (previous, current) => current is LoginSuccess,

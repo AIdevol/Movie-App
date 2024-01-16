@@ -4,7 +4,7 @@ class VideoEntity extends Equatable {
   final String title, key;
   late final String? type;
 
-  VideoEntity({
+  const VideoEntity({
     required this.title,
     required this.key,
     this.type,

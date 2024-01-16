@@ -23,9 +23,9 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
       final response = await _authenticationRemoteDataSource.getRequestToken();
       return Right(response);
     } on SocketException {
-      return Left(AppError(AppErrorType.network));
+      return const Left(AppError(AppErrorType.network));
     } on Exception {
-      return Left(AppError(AppErrorType.api));
+      return const Left(AppError(AppErrorType.api));
     }
   }
 
@@ -44,15 +44,15 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
           .createSession(validateWithLoginToken.toJson());
       if (sessionId != null) {
         await _authenticationLocalDataSource.saveSessionId(sessionId);
-        return Right(true);
+        return const Right(true);
       }
-      return Left(AppError(AppErrorType.sessionDenied));
+      return const Left(AppError(AppErrorType.sessionDenied));
     } on SocketException {
-      return Left(AppError(AppErrorType.network));
+      return const Left(AppError(AppErrorType.network));
     } on UnauthorisedException {
-      return Left(AppError(AppErrorType.unauthorised));
+      return const Left(AppError(AppErrorType.unauthorised));
     } on Exception {
-      return Left(AppError(AppErrorType.api));
+      return const Left(AppError(AppErrorType.api));
     }
   }
 
@@ -66,6 +66,6 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
       ]);
     }
     print(await _authenticationLocalDataSource.getSessionId());
-    return Right(Unit);
+    return const Right(Unit);
   }
 }

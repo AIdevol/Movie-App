@@ -12,10 +12,10 @@ class MovieCardWidget extends StatelessWidget {
   final String posterPath;
 
   const MovieCardWidget({
-    Key? key,
+    super.key,
     required this.movieId,
     required this.posterPath,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

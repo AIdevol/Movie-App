@@ -13,9 +13,9 @@ class SearchMovieCard extends StatelessWidget {
   final MovieEntity movie;
 
   const SearchMovieCard({
-    Key? key,
+    super.key,
     required this.movie,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class SearchMovieCard extends StatelessWidget {
                 children: [
                   Text(
                     movie.title,
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   Text(
                     movie.overview ?? '',

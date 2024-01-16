@@ -8,10 +8,10 @@ class NavigationListItem extends StatelessWidget {
   final Function() onPressed;
 
   const NavigationListItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class NavigationListItem extends StatelessWidget {
         child: ListTile(
           title: Text(
             title,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
       ),
@@ -42,10 +42,10 @@ class NavigationSubListItem extends StatelessWidget {
   final Function() onPressed;
 
   const NavigationSubListItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class NavigationSubListItem extends StatelessWidget {
           contentPadding: EdgeInsets.symmetric(horizontal: Sizes.dimen_32.w),
           title: Text(
             title,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
       ),

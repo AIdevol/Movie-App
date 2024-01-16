@@ -9,7 +9,7 @@ import 'loading_circle.dart';
 class LoadingScreen extends StatelessWidget {
   final Widget screen;
 
-  const LoadingScreen({Key? key, required this.screen}) : super(key: key);
+  const LoadingScreen({super.key, required this.screen});
 
   @override
   Widget build(BuildContext context) {

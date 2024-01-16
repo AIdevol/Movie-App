@@ -12,12 +12,12 @@ class AnimatedMovieCardWidget extends StatelessWidget {
   final PageController pageController;
 
   const AnimatedMovieCardWidget({
-    Key? key,
+    super.key,
     required this.index,
     required this.movieId,
     required this.posterPath,
     required this.pageController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class AnimatedMovieCardWidget extends StatelessWidget {
           value = (1 - (value.abs() * 0.1)).clamp(0.0, 1.0);
           return Align(
             alignment: Alignment.topCenter,
-            child: Container(
+            child: SizedBox(
               height: Curves.easeIn.transform(value) *
                   ScreenUtil.screenHeight *
                   0.35,
@@ -41,7 +41,7 @@ class AnimatedMovieCardWidget extends StatelessWidget {
         } else {
           return Align(
             alignment: Alignment.topCenter,
-            child: Container(
+            child: SizedBox(
               height:
                   Curves.easeIn.transform(index == 0 ? value : value * 0.5) *
                       ScreenUtil.screenHeight *

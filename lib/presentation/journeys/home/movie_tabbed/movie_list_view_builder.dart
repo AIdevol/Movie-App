@@ -8,8 +8,7 @@ import 'movie_tab_card_widget.dart';
 class MovieListViewBuilder extends StatelessWidget {
   final List<MovieEntity> movies;
 
-  const MovieListViewBuilder({Key? key, required this.movies})
-      : super(key: key);
+  const MovieListViewBuilder({super.key, required this.movies});
 
   @override
   Widget build(BuildContext context) {

@@ -13,9 +13,9 @@ class MovieDetailAppBar extends StatelessWidget {
   final MovieDetailEntity movieDetailEntity;
 
   const MovieDetailAppBar({
-    Key? key,
+    super.key,
     required this.movieDetailEntity,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

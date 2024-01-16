@@ -13,11 +13,10 @@ class MoviePageView extends StatefulWidget {
   final int initialPage;
 
   const MoviePageView({
-    Key? key,
+    super.key,
     required this.movies,
     this.initialPage = 0,
-  })  : assert(initialPage >= 0, 'initialPage cannot be less than 0'),
-        super(key: key);
+  })  : assert(initialPage >= 0, 'initialPage cannot be less than 0');
 
   @override
   _MoviePageViewState createState() => _MoviePageViewState();
